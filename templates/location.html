@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 35.1330, lng: 129.1200},
+          mapTypeId: 'satellite',
+          zoom: 15
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={YOUR_API_KEY}&callback=initMap"
+    async defer></script>
+  </body>
+</html>
+
+<!--{% extends "base.html" %}-->
+
+<!--{% block title %}Unmanned Ship Control System{% endblock %}-->
+
+{% block page_content %}
+<div class="page-header">
+    <div class="page-header">
+        <h3>GPS Location</h3>
+    </div>
+    <div>
+
+    </div>
+    <div>
+        <img src="https://maps.googleapis.com/maps/api/staticmap?
+        center=35.1333,129.1200
+        &zoom=14
+        &size=600x500
+        &maptype=satellite
+        &markers=color:green%7Clabel:S%7C35.1330,129.1200
+        &markers=color:red%7Clabel:A%7C35.1195,129.1274
+        &path=color:0xff0000ff|weight:2|35.1333,129.1200|35.1340,129.1200|35.1350,129.1200|35.1355,129.1205|35.1355,129.1215|35.1355,129.1225|
+        35.1360,129.1235|35.1360,129.1245|35.1370,129.1255|35.1357,129.1250|35.1347,129.1271|35.1336,129.1277|35.1338,129.1274|35.1327,129.1284|
+        35.1319,129.1298|35.1307,129.1289|35.1295,129.1298|35.1285,129.1287|35.1269,129.1296|35.1253,129.1304|35.1233,129.1311|35.1218,129.1300|
+        35.1201,129.1288|35.1195,129.1274
+        &key={YOUR_API_KEY}" width="600" height="500">
+    </div>
+    <br/>
+    <div>
+        <iframe width="600" height="500" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/view?key={YOUR_API_KEY}
+                &center=35.1333,129.120
+                &zoom=14
+                &maptype=satellite"
+                allowfullscreen>
+        </iframe>
+    </div>
+    <br/>
+</div>
+{% endblock %}

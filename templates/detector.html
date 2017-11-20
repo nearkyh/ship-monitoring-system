@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}Unmanned Ship Control System{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <div class="page-header">
+        <h3>Ship Detector</h3>
+    </div>
+    <div>
+        <img src="{{ url_for('streaming') }}" width='800' height='500'>
+        <!--<button id="btn_up"-->
+                <!--type="button"-->
+                <!--class="btn btn-primary btn-lg"-->
+                <!--onclick="javascript:up_forward();">Up</button>-->
+
+        <!--<button id="btn_down"-->
+                <!--type="button"-->
+                <!--class="btn btn-primary btn-lg"-->
+                <!--onclick="javascript:down_forward();">Down</button>-->
+
+       <!--<button id="btn_left"-->
+               <!--type="button"-->
+               <!--class="btn btn-primary btn-lg"-->
+               <!--onclick="javascript:left_forward();">Left</button>-->
+
+       <!--<button id="btn_right"-->
+               <!--type="button"-->
+               <!--class="btn btn-primary btn-lg"-->
+               <!--onclick="javascript:right_forward();">Right</button>-->
+    </div>
+    <br/>
+    <div>
+        <!--<table>-->
+            <!--<thead>-->
+                <!--<tr><th>Location | </th><th>Category | </th><th>Score</th></tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+                <!--<tr><td>Location1 | </td><td>Category1 | </td><td>Score1</td></tr>-->
+                <!--<tr><td>Location2 | </td><td>Category2 | </td><td>Score2</td></tr>-->
+                <!--<tr><td>Location3 | </td><td>Category3 | </td><td>Score3</td></tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+    </div>
+</div>
+{% endblock %}
+

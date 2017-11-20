@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}System - Login{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Login</h1>
+    <div>
+        {% if session['logged_in'] %}
+        <p>You're logged in already!</p>
+        {% else %}
+        <!-- 로그인 실패시 메세지 -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="color: red">{{ message }}</p><br>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <form action="/login" method="POST">
+            <input type="username" name="username" placeholder="Username"><br>
+            <input type="password" name="password" placeholder="Password"><br>
+            <input type="submit" value="Log in">
+        </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
